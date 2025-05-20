@@ -1,0 +1,144 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 4, in script call
+    call tela_inicial
+  File "game/script.rpy", line 10, in script call
+    call tela_casos
+  File "game/script.rpy", line 18, in script call
+    call tela_introducao
+  File "game/script.rpy", line 37, in script call
+    call tela_apresentacao_caso
+  File "game/script.rpy", line 45, in script call
+    call tela_suspeitos(0)
+  File "game/script.rpy", line 58, in script call
+    call tela_suspeitos(index + 1)
+  File "game/script.rpy", line 58, in script call
+    call tela_suspeitos(index + 1)
+  File "game/script.rpy", line 58, in script call
+    call tela_suspeitos(index + 1)
+  [Previous line repeated 2 more times]
+  File "game/script.rpy", line 49, in script call
+    call tela_pinturas(0)
+  File "game/script.rpy", line 85, in script call
+    call tela_pinturas(index)
+  File "game/script.rpy", line 85, in script call
+    call tela_pinturas(index)
+  File "game/script.rpy", line 77, in script call
+    call tela_pinturas(index + 1)
+  File "game/script.rpy", line 77, in script call
+    call tela_pinturas(index + 1)
+  File "game/script.rpy", line 85, in script call
+    call tela_pinturas(index)
+  File "game/script.rpy", line 77, in script call
+    call tela_pinturas(index + 1)
+  File "game/script.rpy", line 80, in script call
+    call tela_pinturas(index - 1)
+  File "game/script.rpy", line 77, in script call
+    call tela_pinturas(index + 1)
+  File "game/script.rpy", line 77, in script call
+    call tela_pinturas(index + 1)
+  File "game/script.rpy", line 77, in script call
+    call tela_pinturas(index + 1)
+  [Previous line repeated 1 more time]
+  File "game/script.rpy", line 85, in script call
+    call tela_pinturas(index)
+  File "game/script.rpy", line 77, in script call
+    call tela_pinturas(index + 1)
+  File "game/script.rpy", line 77, in script call
+    call tela_pinturas(index + 1)
+  File "game/script.rpy", line 68, in script call
+    call tela_galeria
+  File "game/script.rpy", line 93, in script call
+    call tela_todos_suspeitos
+  File "game/script.rpy", line 104, in script call
+    call tela_perguntas_personagem("s1", "tela_todos_suspeitos")
+  File "game/script.rpy", line 140, in script call
+    call tela_perguntas_personagem(id, voltar_para)  # Retorna ao menu após responder
+  File "game/script.rpy", line 100, in script call
+    call tela_galeria
+  File "game/script.rpy", line 93, in script call
+    call tela_todos_suspeitos
+  File "game/script.rpy", line 106, in script call
+    call tela_prender("s1")
+  File "game/script.rpy", line 162, in script
+    label verificar_prisao(id):
+TypeError: missing a required argument: 'id'
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 4, in script call
+    call tela_inicial
+  File "game/script.rpy", line 10, in script call
+    call tela_casos
+  File "game/script.rpy", line 18, in script call
+    call tela_introducao
+  File "game/script.rpy", line 37, in script call
+    call tela_apresentacao_caso
+  File "game/script.rpy", line 45, in script call
+    call tela_suspeitos(0)
+  File "game/script.rpy", line 58, in script call
+    call tela_suspeitos(index + 1)
+  File "game/script.rpy", line 58, in script call
+    call tela_suspeitos(index + 1)
+  File "game/script.rpy", line 58, in script call
+    call tela_suspeitos(index + 1)
+  [Previous line repeated 2 more times]
+  File "game/script.rpy", line 49, in script call
+    call tela_pinturas(0)
+  File "game/script.rpy", line 85, in script call
+    call tela_pinturas(index)
+  File "game/script.rpy", line 85, in script call
+    call tela_pinturas(index)
+  File "game/script.rpy", line 77, in script call
+    call tela_pinturas(index + 1)
+  File "game/script.rpy", line 77, in script call
+    call tela_pinturas(index + 1)
+  File "game/script.rpy", line 85, in script call
+    call tela_pinturas(index)
+  File "game/script.rpy", line 77, in script call
+    call tela_pinturas(index + 1)
+  File "game/script.rpy", line 80, in script call
+    call tela_pinturas(index - 1)
+  File "game/script.rpy", line 77, in script call
+    call tela_pinturas(index + 1)
+  File "game/script.rpy", line 77, in script call
+    call tela_pinturas(index + 1)
+  File "game/script.rpy", line 77, in script call
+    call tela_pinturas(index + 1)
+  [Previous line repeated 1 more time]
+  File "game/script.rpy", line 85, in script call
+    call tela_pinturas(index)
+  File "game/script.rpy", line 77, in script call
+    call tela_pinturas(index + 1)
+  File "game/script.rpy", line 77, in script call
+    call tela_pinturas(index + 1)
+  File "game/script.rpy", line 68, in script call
+    call tela_galeria
+  File "game/script.rpy", line 93, in script call
+    call tela_todos_suspeitos
+  File "game/script.rpy", line 104, in script call
+    call tela_perguntas_personagem("s1", "tela_todos_suspeitos")
+  File "game/script.rpy", line 140, in script call
+    call tela_perguntas_personagem(id, voltar_para)  # Retorna ao menu após responder
+  File "game/script.rpy", line 100, in script call
+    call tela_galeria
+  File "game/script.rpy", line 93, in script call
+    call tela_todos_suspeitos
+  File "game/script.rpy", line 106, in script call
+    call tela_prender("s1")
+  File "game/script.rpy", line 162, in script
+    label verificar_prisao(id):
+  File "E:\Faculdade\2025.1\ProjJogos\renpy-8.3.7-sdk\renpy\ast.py", line 777, in execute
+    values = apply_arguments(self.parameters, renpy.store._args, renpy.store._kwargs)
+  File "E:\Faculdade\2025.1\ProjJogos\renpy-8.3.7-sdk\renpy\parameter.py", line 455, in apply_arguments
+    return parameters.apply(args or (), kwargs or {}, ignore_errors)
+  File "E:\Faculdade\2025.1\ProjJogos\renpy-8.3.7-sdk\renpy\parameter.py", line 307, in apply
+    raise TypeError(msg) # from None
+TypeError: missing a required argument: 'id'
+
+Windows-10-10.0.26100 AMD64
+Ren'Py 8.3.7.25031702
+TheColorOfGuilt 1.0
+Mon May 19 22:31:31 2025
