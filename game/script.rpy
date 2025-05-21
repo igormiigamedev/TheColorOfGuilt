@@ -45,7 +45,7 @@ screen galeria_quadros():
     imagebutton:
         idle "Ui/btn_ver_suspeitos_idle.png" 
         hover "Ui/btn_ver_suspeitos_hover.png" 
-        xpos 1000 ypos 1000
+        xpos 1600 ypos 800
         action [Hide("galeria_quadros"), Show("tela_todos_suspeitos")]
 
     vbox:
@@ -176,20 +176,20 @@ screen tela_quadro_detalhe(quadro_index=0, b_ApresentacaoInicial=0):
             imagebutton:
                 idle "Ui/avancar_idle.png"
                 hover "Ui/avancar_hover.png"
-                xpos 1000 ypos 50
+                xpos 1600 ypos 200
                 action [Hide("tela_quadro_detalhe"), Call("logic_screen_galeria_quadros")]
                 
         else:
             imagebutton:
                 idle "Ui/avancar_idle.png"
                 hover "Ui/avancar_hover.png"
-                xpos 1000 ypos 50
+                xpos 1600 ypos 200
                 action [Hide("tela_quadro_detalhe"), Show("tela_quadro_detalhe", quadro_index=quadro_index + 1, b_ApresentacaoInicial=b_ApresentacaoInicial)]
             
         imagebutton:
             idle "Ui/voltar_idle.png"
             hover "Ui/voltar_hover.png"
-            xpos 50 ypos 50
+            xpos 30 ypos 30
             if quadro_index > 0:
                 action [Hide("tela_quadro_detalhe"), Show("tela_quadro_detalhe", quadro_index=quadro_index - 1, b_ApresentacaoInicial=b_ApresentacaoInicial)]
             else:
@@ -203,9 +203,9 @@ screen tela_quadro_detalhe(quadro_index=0, b_ApresentacaoInicial=0):
             action [Hide("tela_quadro_detalhe"), Call("tela_perguntas_personagem", "julien", "logic_screen_galeria_quadros", quadro_index)]
 
         imagebutton:
-            idle "Ui/voltar.png"
-            hover "Ui/voltar.png"
-            xpos 50 ypos 50
+            idle "Ui/voltar_idle.png"
+            hover "Ui/voltar_hover.png"
+            xpos 30 ypos 30
             action [Hide("tela_quadro_detalhe"), Call("logic_screen_galeria_quadros")]
         
 screen tela_todos_suspeitos():
@@ -215,8 +215,8 @@ screen tela_todos_suspeitos():
 
     # Botão para voltar para a galeria de quadros
     imagebutton:
-        idle "Ui/btn_GaleriaDeQuadros.png"
-        hover "Ui/btn_GaleriaDeQuadros.png"
+        idle "Ui/btn_GaleriaDeQuadros_idle.png"
+        hover "Ui/btn_GaleriaDeQuadros_hover.png"
         xpos 50 ypos 50
         action [Hide("tela_todos_suspeitos"), Call("logic_screen_galeria_quadros")]
 
@@ -245,23 +245,23 @@ screen tela_interrogar_suspeito(id):
 
     # Botão: Voltar para todos os suspeitos
     imagebutton:
-        idle "Ui/voltar_idle.png"
-        hover "Ui/voltar_idle.png"
-        xpos 50 ypos 550
+        idle "Ui/btn_voltar_suspeito_idle.png"
+        hover "Ui/btn_voltar_suspeito_hover.png"
+        xpos 275 ypos 800
         action [Hide("tela_interrogar_suspeito"), Show("tela_todos_suspeitos")]
 
     # Botão: Interrogar (vai para tela_perguntas_personagem)
     imagebutton:
-        idle "Ui/btn_interrogar_idle.png"
+        idle "Ui/btn_interrogar_hover.png"
         hover "Ui/btn_interrogar_idle.png"
-        xpos 500 ypos 550
+        xpos 875 ypos 800
         action [Hide("tela_interrogar_suspeito"), Call("tela_perguntas_personagem", id, "voltar_para_tela_todos_suspeitos")]
 
     # Botão: Prender (vai para tela_prender)
     imagebutton:
-        idle "Ui/btn_prender_idle.png"
+        idle "Ui/btn_prender_hover.png"
         hover "Ui/btn_prender_idle.png"
-        xpos 950 ypos 550
+        xpos 1475 ypos 800
         action [Hide("tela_interrogar_suspeito"), Call("tela_prender", id)]
 
 label voltar_para_tela_todos_suspeitos:
