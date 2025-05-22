@@ -91,8 +91,11 @@ label tela_introducao:
     # window show
 
     "Você é um detetive. Analise as pinturas e depoimentos para encontrar o culpado."
-    "Pontuação: Após 5 perguntas feitas no total, -2 ponto a cada nova pergunta."
-
+    "Para resolver o mistério, você poderá fazer perguntas aos suspeitos e ao pintor"
+    "- Ao todo você pode fazer 5 perguntas gratuitamente."
+    "- Após essas 5 perguntas, cada pergunta adicional custa 2 pontos da sua pontuação final."
+    "- Investigue com sabedoria: encontrar as contradições e os pequenos detalhes pode ser mais valioso do que acumular falas."
+    "- Sua pontuação final será baseada em eficiência, precisão nas acusações e uso estratégico de perguntas."
     # window hide
     # pause
     call tela_apresentacao_caso from _call_tela_apresentacao_caso
@@ -100,8 +103,12 @@ label tela_introducao:
 label tela_apresentacao_caso:
     scene bg bg_tela_introducao
 
-    "A vítima foi encontrada em seu ateliê. Não há sinais de arrombamento."
-    "Julien Armand, pintor vizinho, deixou 8 pinturas com possíveis pistas."
+    "Na manhã de terça-feira, o renomado botânico Dr. William Hargrove foi encontrado sem vida dentro de sua estufa. "
+    "A causa da morte: asfixia por falta de oxigênio. Não havia sinais de luta ou arrombamento. "
+    "Curiosamente, a entrada de ar da estufa havia sido trancada por fora, algo que não poderia ter ocorrido acidentalmente."
+    "Você, detetive Valentin Mireau, foi chamado para investigar o caso. Durante a investigação inicial, um vizinho excêntrico, o pintor Julien Armand, entrega oito quadros que fez da janela de sua varanda. "
+    "As pinturas retratam cenas do jardim e da estufa nos dias e noites que antecederam a morte do botânico."
+    "Com base em interrogatórios, observações e nas pistas visuais das obras, você deverá revelar a verdade por trás deste assassinato silencioso — e artístico."
 
     call tela_suspeitos(0) from _call_tela_suspeitos
 
@@ -164,7 +171,7 @@ screen tela_quadro_detalhe(quadro_index=0, b_ApresentacaoInicial=0):
         yalign 0.4
 
 # Texto de instrução
-    text "Pintor: Julien Armand - [p['descricao']]":
+    text "Julien - [p['descricao']]":
         xpos 0.5
         ypos 0.1
         xanchor 0.5
@@ -435,7 +442,11 @@ label tela_derrota:
 
 label tela_solucao:
     scene bg bg_tela_introducao
-    "Explicação passo a passo do caso."
+    "Explicação passo a passo do caso:"
+    "Assassina: Dr. Clarissa Wynn"
+    "Motivação: Vingança científica. Ao ser convidada pela sobrinha do botânico para visitar a estufa, Clarissa descobre evidências claras de que William Hargrove ainda utilizava suas pesquisas indevidamente. A traição reacende a mágoa e a fúria da rival."
+    "Método: Sabotagem técnica do sistema de ventilação. Com profundo conhecimento em botânica e estruturas de estufas, Clarissa aproveita a visita, supostamente para ajudar a resolver um problema de ruído, e altera discretamente o sistema de segurança, trancando a entrada de ar por fora."
+    "Naquela mesma noite, sem saber da sabotagem, William entra na estufa para trabalhar e morre asfixiado, sem deixar sinais de violência."
 
     menu:
         "Voltar a menu de casos":
@@ -506,14 +517,14 @@ init python:
     # ]
 
     pinturas = [
-        {"imagem_idle": "Quadros/Idle/pintura1_idle.png", "imagem_hover": "Quadros/Hover/pintura1_hover.png", "descricao": "Descrição 1"},
-        {"imagem_idle": "Quadros/Idle/pintura2_idle.png", "imagem_hover": "Quadros/Hover/pintura2_hover.png", "descricao": "Descrição 2"},
-        {"imagem_idle": "Quadros/Idle/pintura3_idle.png", "imagem_hover": "Quadros/Hover/pintura3_hover.png", "descricao": "Descrição 3"},
-        {"imagem_idle": "Quadros/Idle/pintura4_idle.png", "imagem_hover": "Quadros/Hover/pintura4_hover.png", "descricao": "Descrição 4"},
-        {"imagem_idle": "Quadros/Idle/pintura5_idle.png", "imagem_hover": "Quadros/Hover/pintura5_hover.png", "descricao": "Descrição 5"},
-        {"imagem_idle": "Quadros/Idle/pintura6_idle.png", "imagem_hover": "Quadros/Hover/pintura6_hover.png", "descricao": "Descrição 6"},
-        {"imagem_idle": "Quadros/Idle/pintura7_idle.png", "imagem_hover": "Quadros/Hover/pintura7_hover.png", "descricao": "Descrição 7"},
-        {"imagem_idle": "Quadros/Idle/pintura8_idle.png", "imagem_hover": "Quadros/Hover/pintura8_hover.png", "descricao": "Descrição 8"},
+        {"imagem_idle": "Quadros/Idle/pintura1_idle.png", "imagem_hover": "Quadros/Hover/pintura1_hover.png", "descricao": "Um confronto silencioso sob galhos nus."},
+        {"imagem_idle": "Quadros/Idle/pintura2_idle.png", "imagem_hover": "Quadros/Hover/pintura2_hover.png", "descricao": "Aquecidos por uma urgência muda."},
+        {"imagem_idle": "Quadros/Idle/pintura3_idle.png", "imagem_hover": "Quadros/Hover/pintura3_hover.png", "descricao": "Luz entre folhas e sombra entre olhares."},
+        {"imagem_idle": "Quadros/Idle/pintura4_idle.png", "imagem_hover": "Quadros/Hover/pintura4_hover.png", "descricao": "A raiva veste tons lilases."},
+        {"imagem_idle": "Quadros/Idle/pintura5_idle.png", "imagem_hover": "Quadros/Hover/pintura5_hover.png", "descricao": "Palavras suaves mascaram raízes duras."},
+        {"imagem_idle": "Quadros/Idle/pintura6_idle.png", "imagem_hover": "Quadros/Hover/pintura6_hover.png", "descricao": "Florescendo entre vidros"},
+        {"imagem_idle": "Quadros/Idle/pintura7_idle.png", "imagem_hover": "Quadros/Hover/pintura7_hover.png", "descricao": "A Troca Azul"},
+        {"imagem_idle": "Quadros/Idle/pintura8_idle.png", "imagem_hover": "Quadros/Hover/pintura8_hover.png", "descricao": "A sombra da frustração se arrasta pelo solo."},
     ]
 
     personagens = {
@@ -573,7 +584,7 @@ init python:
     },
     "s1": {
         "nome": "Beatrice Hargrove",
-        "descricao": "Histórico 1",
+        "descricao": "Sonha em viajar o mundo e tem dívidas crescentes. O falecido estava estava com pesquisas em andamento com potencial valor que ela poderia herdar.",
         "imagem_idle": "Personagens/Suspeito1/suspeito1_idle.png",
         "imagem_hover": "Personagens/Suspeito1/suspeito1_hover.png",
         "perguntas": [
@@ -583,7 +594,7 @@ init python:
     },
     "s2": {
         "nome": "Thomas Bexley",
-        "descricao": "Histórico 2",
+        "descricao": "Jardineiro da casa. Diz ter sido demitido de maneira injusta.",
         "imagem_idle": "Personagens/Suspeito2/suspeito2_idle.png",
         "imagem_hover": "Personagens/Suspeito2/suspeito2_hover.png",
         "perguntas": [
@@ -593,7 +604,7 @@ init python:
     },
     "s3": {
         "nome": "Dr. Clarissa Wynn",
-        "descricao": "Histórico 3",
+        "descricao": "Bióloga vegetal. Anos atrás, acusou Hargrove de plagiar suas pesquisas, ambos resolveram judicialmente o assunto.",
         "imagem_idle": "Personagens/Suspeito3/suspeito3_idle.png",
         "imagem_hover": "Personagens/Suspeito3/suspeito3_hover.png",
         "perguntas": [
@@ -603,7 +614,7 @@ init python:
     },
     "s4": {
         "nome": "Miles Torrence",
-        "descricao": "Histórico 4",
+        "descricao": "Pesquisador autônomo e ex-assistente do botânico. Ao ser demitido, ficou frustado por não conseguir seguir sua pesquisa sem a planta de Hargrove.",
         "imagem_idle": "Personagens/Suspeito4/suspeito4_idle.png",
         "imagem_hover": "Personagens/Suspeito4/suspeito4_hover.png",
         "perguntas": [
@@ -613,7 +624,7 @@ init python:
     },
     "s5": {
         "nome": "Eleanor Finch",
-        "descricao": "Histórico 5",
+        "descricao": "Vizinha da vítima, professora aposentada de música. Se queixava constantemente dos sons e vapores noturnos da estufa.",
         "imagem_idle": "Personagens/Suspeito5/suspeito5_idle.png",
         "imagem_hover": "Personagens/Suspeito5/suspeito5_hover.png",
         "perguntas": [
