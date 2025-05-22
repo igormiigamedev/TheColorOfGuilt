@@ -533,53 +533,124 @@ init python:
         "imagem_idle": "Personagens/Pintor/pintor_idle.png",
         "imagem_hover": "Personagens/Pintor/pintor_hover.png",
         "perguntas_pintura1": [
-            "Pergunta 1", "Pergunta 2", "Pergunta 3", "Pergunta 4", "Pergunta 5"
-        ],
-        "respostas_pintura1": [
-            "Resposta 1", "Resposta 2", "Resposta 3", "Resposta 4", "Resposta 5"
-        ],
-        "perguntas_pintura2": [
-            "Pergunta 1", "Pergunta 2", "Pergunta 3", "Pergunta 4", "Pergunta 5"
-        ],
-        "respostas_pintura2": [
-            "Resposta 1", "Resposta 2", "Resposta 3", "Resposta 4", "Resposta 5"
-        ],
-        "perguntas_pintura3": [
-            "Pergunta 1", "Pergunta 2", "Pergunta 3", "Pergunta 4", "Pergunta 5"
-        ],
-        "respostas_pintura3": [
-            "Resposta 1", "Resposta 2", "Resposta 3", "Resposta 4", "Resposta 5"
-        ],
-        "perguntas_pintura4": [
-            "Pergunta 1", "Pergunta 2", "Pergunta 3", "Pergunta 4", "Pergunta 5"
-        ],
-        "respostas_pintura4": [
-            "Resposta 1", "Resposta 2", "Resposta 3", "Resposta 4", "Resposta 5"
-        ],
-        "perguntas_pintura5": [
-            "Pergunta 1", "Pergunta 2", "Pergunta 3", "Pergunta 4", "Pergunta 5"
-        ],
-        "respostas_pintura5": [
-            "Resposta 1", "Resposta 2", "Resposta 3", "Resposta 4", "Resposta 5"
-        ],
-        "perguntas_pintura6": [
-            "Pergunta 1", "Pergunta 2", "Pergunta 3", "Pergunta 4", "Pergunta 5"
-        ],
-        "respostas_pintura6": [
-            "Resposta 1", "Resposta 2", "Resposta 3", "Resposta 4", "Resposta 5"
-        ],
-        "perguntas_pintura7": [
-            "Pergunta 1", "Pergunta 2", "Pergunta 3", "Pergunta 4", "Pergunta 5"
-        ],
-        "respostas_pintura7": [
-            "Resposta 1", "Resposta 2", "Resposta 3", "Resposta 4", "Resposta 5"
-        ],
-        "perguntas_pintura8": [
-            "Pergunta 1", "Pergunta 2", "Pergunta 3", "Pergunta 4", "Pergunta 5"
-        ],
-        "respostas_pintura8": [
-            "Resposta 1", "Resposta 2", "Resposta 3", "Resposta 4", "Resposta 5"
-        ]
+        "O que o motivou a pintar essa cena?",
+        "O senhor ouviu algo durante essa cena?",
+        "Por que o assistente aparece com um guarda-chuva?",
+        "A planta azul no fundo é bastante visível. Foi intencional?",
+        "Qual era o clima geral naquele momento?"
+    ],
+    "respostas_pintura1": [
+        "Havia uma tensão no ar, como o estalar de galhos secos no inverno. A mancha azul da planta era a única chama em meio ao cinza. A rejeição saltava dos gestos — pintá-la foi inevitável.",
+        "Um grito abafado. Não palavras, mas um som de frustração… seguido pelo estrondo da porta da estufa.",
+        "Ele o leva sempre. Hábito, talvez superstição. Não chovia naquela tarde.",
+        "Era como um segredo mal enterrado, querendo florescer mesmo no frio. A cor exigia presença.",
+        "O inverno parecia mais frio ao redor deles. Dois homens, e um adeus seco como geada na pele."
+    ],
+
+    "perguntas_pintura2": [
+        "Por que pintou esse momento em especial?",
+        "Consegue identificar o conteúdo do envelope?",
+        "O que te chamou mais atenção nessa cena?",
+        "Eles pareciam nervosos ou calmos?",
+        "Havia mais alguém por perto?"
+    ],
+    "respostas_pintura2": [
+        "Porque foi um gesto raro: calor no inverno. Um segredo selado em papel pálido.",
+        "Não. Só vi que ele o tirou do bolso do casaco, cuidadosamente. Ela o escondeu rápido.",
+        "A cor — o vermelho do vestido dela cortava a paisagem morta. Era como se ela carregasse o fogo do outono em pleno gelo.",
+        "Cúmplices. Trocaram poucas palavras, mas muitos olhares.",
+        "Só o silêncio. E o peso de algo prestes a germinar — como uma semente guardada."
+    ],
+
+    "perguntas_pintura3": [
+        "Por que decidiu pintar uma cena noturna?",
+        "Era comum o Dr. Hargrove trabalhar à noite?",
+        "Como descreve o semblante das duas mulheres?",
+        "Por que há tanto contraste de luz na pintura?",
+        "Algo mais chamou sua atenção nessa noite?"
+    ],
+    "respostas_pintura3": [
+        "Porque a noite sussurra verdades que o dia encobre. A luz da estufa parecia pulsar como um coração em febre, e os olhos nas janelas... dois faróis de julgamento.",
+        "Sim, especialmente na primavera. Dizia que as plantas “sussurravam melhor sob a lua”.",
+        "A vizinha, como uma coruja inquieta. A sobrinha, uma vela acesa pela dúvida — ou pela lembrança.",
+        "Porque a cena era feita de extremos: luz artificial contra escuridão natural. Revelações à força.",
+        "Um som agudo vindo da estufa, como metal forçado. Parecia mecânico."
+    ],
+
+    "perguntas_pintura4": [
+        "O que motivou essa pintura?",
+        "O que pareciam discutir?",
+        "A sobrinha parecia preocupada?",
+        "Por que as cores estão tão desbotadas nessa pintura?",
+        "O que havia no jardim nesse momento?"
+    ],
+    "respostas_pintura4": [
+        "Foi uma manhã de vozes elevadas e gestos pontiagudos. A lavanda da roupa dela parecia engolida pelo cinza da irritação.",
+        "Barulho. Ela apontava para a estufa, fazia gestos com as mãos nos ouvidos.",
+        "Não. Observava de longe, sem intervir. Como quem espera o fim de uma peça.",
+        "Porque a raiva apaga a beleza. E ali, a manhã parecia vestida de bruma, como se até a primavera recuasse.",
+        "As flores recém-abertas não se intrometiam. Mas o vento levava fragmentos do que foi dito."
+    ],
+
+    "perguntas_pintura5": [
+        "Por que pintar esse momento aparentemente banal?",
+        "Pareciam estar em conflito ou harmonia?",
+        "Algum objeto trocado entre elas?",
+        "Qual foi sua principal escolha de composição?",
+        "Alguma coisa incomum no fundo da imagem?"
+    ],
+    "respostas_pintura5": [
+        "Porque a calma é um véu. Sob ele, às vezes se escondem conspirações. E ali, o lilás do lenço parecia dialogar com o laranja do vestido — dissonantes, porém próximas.",
+        "Conversa calma. Mas a sobrinha gesticulava. Parecia justificar algo.",
+        "Não vi trocas. Só palavras, gestos e... talvez segundas intenções.",
+        "Usei tons quentes cercados por sombra — o dia bonito tentando encobrir algo não dito.",
+        "Um pássaro sobre o telhado da estufa. Observava. Como eu."
+    ],
+
+    "perguntas_pintura6": [
+        "Por que pintar duas figuras dentro da estufa?",
+        "O que pareciam estar fazendo?",
+        "Você notou algo estranho nessa cena?",
+        "Por que as cores são mais vibrantes nesta pintura?",
+        "Qual sensação teve ao concluir essa obra?"
+    ],
+    "respostas_pintura6": [
+        "Porque o vidro não separava o mundo — só o distorcia. Lá dentro, duas presenças divergentes, como água e óleo.",
+        "A doutora gesticulava com força. A sobrinha tentava explicar. Algo havia sido descoberto.",
+        "A cientista saiu sozinha pouco depois. O rosto... sombrio, de raiva. A sobrinha não a acompanhou.",
+        "Porque a tensão elétrica pairava. Era o tipo de momento onde tudo poderia florescer... ou murchar de vez.",
+        "Que algo estava prestes a quebrar. Como vidro sob pressão."
+    ],
+
+    "perguntas_pintura7": [
+        "O que é representado nessa imagem?",
+        "O Dr reagiu imediatamente?",
+        "Como descreve o clima emocional da cena?",
+        "Você sabia o que era a planta entregue?",
+        "Alguém mais estava por perto?"
+    ],
+    "respostas_pintura7": [
+        "Uma transição, tranquila, entre o jardineiro e o antigo assistente. Mas um detalhe que não pintei foi o Dr vendo tudo da janela, irritado.",
+        "Não desceu. Mas sumiu da janela logo depois. Como se precisasse pensar.",
+        "O calor da primavera não aquecia o gesto. Era uma troca amarga sob um sol que parecia zombar.",
+        "Era azul, como a do inverno. Só podia ser a mesma flor.",
+        "Não. Só o vento, como um sussurro de advertência."
+    ],
+
+    "perguntas_pintura8": [
+        "O que expressava o corpo do jardineiro?",
+        "Ele estava levando algo da estufa?",
+        "O senhor ouviu ou viu o Dr. Hargrove nesse momento?",
+        "Por que a luz e sombra são tão contrastantes nessa pintura?",
+        "O que sentiu ao pintar essa imagem?"
+    ],
+    "respostas_pintura8": [
+        "Era como um tronco arrancado do chão. Cada passo era raiva contida. A pá em sua mão brilhava como ferro sob a luz do meio-dia.",
+        "Sim. Ferramentas — e raiva.",
+        "Não. Apenas a Dra Wynn estava pela estufa nesse momento, com um rosto de raiva profunda.",
+        "Porque era um fim de cena. E finais merecem claridade e escuridão dançando juntas.",
+        "Que tudo estava prestes a terminar. Ou começar de novo, mas manchado."
+    ]
 
     },
     "s1": {
@@ -588,9 +659,19 @@ init python:
         "imagem_idle": "Personagens/Suspeito1/suspeito1_idle.png",
         "imagem_hover": "Personagens/Suspeito1/suspeito1_hover.png",
         "perguntas": [
-            "Pergunta 1", "Pergunta 2", "Pergunta 3", "Pergunta 4", "Pergunta 5"
+            "Você estava prestes a viajar, não?", 
+            "Como era sua relação com seu tio?", 
+            "O que você recebeu do Assistente no Inverno?", 
+            "O que você e a Dra. Wynn estavam fazendo na estufa naquele dia?", 
+            "Foi você?"
         ],
-        "respostas": ["Resp 1", "Resp 2", "Resp 3", "Resp 4", "Resp 5"]
+        "respostas": [
+            "Sim, adoro viajar, mesmo que meus pais estejam ficando impacientes com isso.",
+            "Ele sempre foi um doce, me deixava visitar e aprender sobre plantas com ele.",
+            "Recebi um envelope com dinheiro em troca de uma muda de planta azul rara que cultivei com ajuda do jardineiro.",
+            "Fomos consertar um problema na ventilação da estufa pois estava com um barulho muito alto, e deixei a Dra. assumir quando vi que não sabia lidar com isso.",
+            "Por que eu mataria meu tio?! 😢"
+        ]
     },
     "s2": {
         "nome": "Thomas Bexley",
@@ -598,9 +679,19 @@ init python:
         "imagem_idle": "Personagens/Suspeito2/suspeito2_idle.png",
         "imagem_hover": "Personagens/Suspeito2/suspeito2_hover.png",
         "perguntas": [
-            "Pergunta 1", "Pergunta 2", "Pergunta 3", "Pergunta 4", "Pergunta 5"
+            "É verdade que o Dr. Hargrove te demitiu pouco antes de morrer?",
+            "O que era aquela planta que você entregou ao Assistente?",
+            "Era difícil trabalhar para o Dr. Hargrove?",
+            "Você cuidava da manutenção da estufa?",
+            "Foi você?"
         ],
-        "respostas": ["Resp 1", "Resp 2", "Resp 3", "Resp 4", "Resp 5"]
+        "respostas": [
+            "Sim, ele achou que eu estava vendendo as plantas por conta própria, mas foi a pedido da Beatrice.",
+            "Uma planta azul rara que a Beatrice começou e eu cuidei até o Assistente buscá-la.",
+            "Ele era exigente, mas já trabalhei para piores; agora tenho um emprego melhor.",
+            "Não, só das plantas; vi a Dra. mexendo sozinha na estufa irritada um dia.",
+            "Plantaram isso contra mim, com certeza!"
+        ]
     },
     "s3": {
         "nome": "Dr. Clarissa Wynn",
@@ -608,9 +699,19 @@ init python:
         "imagem_idle": "Personagens/Suspeito3/suspeito3_idle.png",
         "imagem_hover": "Personagens/Suspeito3/suspeito3_hover.png",
         "perguntas": [
-            "Pergunta 1", "Pergunta 2", "Pergunta 3", "Pergunta 4", "Pergunta 5"
+            "Como você conheceu o Dr. Hargrove?",
+            "É verdade que o Dr. e você tinham uma intriga?",
+            "O que você foi fazer na Estufa com a Senhorita Beatrice naquele dia?",
+            "Você foi visitar a estufa depois daquele dia?",
+            "Foi você?"
         ],
-        "respostas": ["Resp 1", "Resp 2", "Resp 3", "Resp 4", "Resp 5"]
+        "respostas": [
+            "Fomos colegas de doutorado, nada além disso.",
+            "Sim, ele publicou um artigo baseado na minha apresentação, mas se desculpou quando confrontei.",
+            "Fui ajudar a consertar o barulho da estufa que William ignorou, típico dele.",
+            "Sim, voltei para continuar a manutenção, já que Beatrice insistiu.",
+            "Você não é um detetive muito bom, não é?"
+        ]
     },
     "s4": {
         "nome": "Miles Torrence",
@@ -618,9 +719,19 @@ init python:
         "imagem_idle": "Personagens/Suspeito4/suspeito4_idle.png",
         "imagem_hover": "Personagens/Suspeito4/suspeito4_hover.png",
         "perguntas": [
-            "Pergunta 1", "Pergunta 2", "Pergunta 3", "Pergunta 4", "Pergunta 5"
+            "Você trabalhava como assistente para o Dr Hargrove, não?",
+            "Era difícil trabalhar para o Dr?",
+            "O que você entregou à Sobrinha no inverno?",
+            "Afinal o que era essa planta azul?",
+            "Foi você?"
         ],
-        "respostas": ["Resp 1", "Resp 2", "Resp 3", "Resp 4", "Resp 5"]
+        "respostas": [
+            "Sim, mas saí depois de uma briga por ele não deixar eu pesquisar uma planta rara.",
+            "Ele era um chefe bem chato, e não deixava eu colocar as mãos nas pesquisas direito.",
+            "Dinheiro, em troca de uma amostra igual à do tio dela que ela prometeu conseguir.",
+            "Uma espécie rara que só cresce em uma ilha no sul da África….",
+            "Se eu fosse o culpado, você acha que eu diria sim?"
+        ]
     },
     "s5": {
         "nome": "Eleanor Finch",
@@ -628,9 +739,19 @@ init python:
         "imagem_idle": "Personagens/Suspeito5/suspeito5_idle.png",
         "imagem_hover": "Personagens/Suspeito5/suspeito5_hover.png",
         "perguntas": [
-            "Pergunta 1", "Pergunta 2", "Pergunta 3", "Pergunta 4", "Pergunta 5"
+            "Então a estufa estava fazendo muito barulho?",
+            "Além dos barulhos, ele era um bom vizinho?",
+            "A Sobrinha da vítima é confiável?",
+            "Algum outro residente ou visitante poderia ter problemas com o Dr Hargrove?",
+            "Foi você?"
         ],
-        "respostas": ["Resp 1", "Resp 2", "Resp 3", "Resp 4", "Resp 5"]
+        "respostas": [
+            "Sim, me tirava o sono, e só parou quando a sobrinha veio resolver.",
+            "Discreto, mas egocêntrico e já ouvi histórias de desentendimentos e plágio.",
+            "Sim, sempre prestativa, mas um pouco mimada e sem rumo na vida.",
+            "O assistente e o jardineiro, que ele tratava mal e demitia por pouco.",
+            "Acusar assim sem prova? Espere eu chamar meus advogados!"
+        ]
     }
 }
 
