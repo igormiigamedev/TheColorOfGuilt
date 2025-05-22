@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 115: expected statement.
-    xpos 0.5
-          ^
-
-File "game/script.rpy", line 116: expected statement.
-    ypos 0.5
-          ^
+File "game/script.rpy", line 444: expected ':' not found.
+    else
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Wed May 21 22:06:33 2025
+Thu May 22 00:28:55 2025

@@ -1,11 +1,17 @@
 ﻿## Arquivo principal Ren'Py: script.rpy
 
+init:
+    image bg bg_tela_introducao = "images/bg/bg_tela_inicial.png"
+    image bg tela_suspeitos = "images/bg/bg_tela_suspeitos.png"
+    image bg artista = "images/bg/bg_tela_artista.png"
+
+
 label start:
     call tela_inicial
 
 
 label tela_inicial:
-    # scene bg tela_inicial
+    scene bg bg_tela_introducao
 
     # call logic_screen_galeria_quadros
     # return
@@ -30,7 +36,7 @@ label logic_screen_galeria_quadros:
 screen galeria_quadros():
 
     tag menu
-    add "Cenarios/fundo_galeria.png"
+    add "images/bg/bg_tela_artista.png"
 
     # Texto de instrução
     text "Escolha uma pintura para revisar.":
@@ -63,7 +69,7 @@ screen galeria_quadros():
                         action Return(index)
 
 label tela_casos:
-    scene bg tela_casos
+    scene bg bg_tela_introducao
     "Escolha um caso para começar."
     menu:
         "Caso 1 - O Vulto na Névoa":
@@ -76,21 +82,21 @@ label tela_casos:
             jump tela_casos
 
 label tela_introducao:
-    scene bg tela_introducao
+    scene bg bg_tela_introducao
     $ tempo_jogo = 0
     $ perguntas_feitas = 0
     $ pontuacao = 100
-    #window show
+    # window show
 
     "Você é um detetive. Analise as pinturas e depoimentos para encontrar o culpado."
     "Pontuação: Após 5 perguntas feitas no total, -2 ponto a cada nova pergunta."
 
-    #window hide
-    #pause
+    # window hide
+    # pause
     call tela_apresentacao_caso
 
 label tela_apresentacao_caso:
-    scene bg apresentacao_caso
+    scene bg bg_tela_introducao
 
     "A vítima foi encontrada em seu ateliê. Não há sinais de arrombamento."
     "Julien Armand, pintor vizinho, deixou 8 pinturas com possíveis pistas."
@@ -98,6 +104,7 @@ label tela_apresentacao_caso:
     call tela_suspeitos(0)
 
 label tela_suspeitos(index):
+    scene bg tela_suspeitos
     $ renpy.hide_screen("botao_voltar_suspeito")
     if index >= 5:
         $ chave = "s{}".format(index)
@@ -109,7 +116,6 @@ label tela_suspeitos(index):
         $ chave = "s{}".format(index+1)
         $ s = personagens[chave]
 
-        scene bg apresentacao_suspeito
 
         show expression s['imagem_idle'] at Position(xalign=0.5, yalign=-0.5)
         show screen botao_voltar_suspeito(index)
@@ -143,6 +149,8 @@ screen botao_voltar_suspeito(index):
             action [Hide("botao_voltar_suspeito"), Call("tela_apresentacao_caso")]
 
 screen tela_quadro_detalhe(quadro_index=0, b_ApresentacaoInicial=0):
+
+    add "images/bg/bg_tela_artista.png"
 
     tag quadro_detalhe  # útil para poder substituir ou esconder depois
 
@@ -209,8 +217,7 @@ screen tela_quadro_detalhe(quadro_index=0, b_ApresentacaoInicial=0):
         
 screen tela_todos_suspeitos():
 
-    tag menu
-    add "Cenarios/fundo_suspeitos.png"
+    add "images/bg/bg_tela_suspeitos.png" 
 
     # Botão para voltar para a galeria de quadros
     imagebutton:
@@ -221,7 +228,7 @@ screen tela_todos_suspeitos():
 
     # Container para centralizar tudo na tela
     frame:
-        align (0.5, 0.9)
+        align (0.5, 1.5)
         background None
 
         hbox:
@@ -236,9 +243,8 @@ screen tela_todos_suspeitos():
 
 
 screen tela_interrogar_suspeito(id):
-
     tag suspeito
-    add "Cenarios/fundo_interrogatorio.png"
+    add "images/bg/bg_tela_suspeitos.png"
 
     $ suspeito = personagens[id]
 
@@ -311,8 +317,10 @@ screen screen_perguntas_personagem(id, voltar_para, index_tela_anterior=0, b_Apr
 
     # Se for Julien, usamos as perguntas da pintura correspondente
     if id == "julien":
+        add "images/bg/bg_tela_artista.png"
         default pintura_key = f"pintura{index_tela_anterior + 1}" 
     else:
+        add "images/bg/bg_tela_suspeitos.png"
         default pintura_key = ""
     default perguntas = personagem.get(f"perguntas_{pintura_key}", personagem.get("perguntas", []))
     default total_perguntas = len(perguntas)
@@ -320,7 +328,6 @@ screen screen_perguntas_personagem(id, voltar_para, index_tela_anterior=0, b_Apr
     # default total_perguntas = len(personagem["perguntas"])
 
     tag menu
-    add "bg perguntas"
 
     vbox:
         align (0.5, 0.1)
@@ -369,6 +376,7 @@ label tela_perguntas_personagem(id, voltar_para, index_tela_anterior=0, b_Aprese
 
 
 label tela_resposta(id, q):
+
     if id == "julien":
         $ pintura_key = f"pintura{index_tela_anterior + 1}"
         $ resposta = personagens[id].get(f"respostas_{pintura_key}", [""])[q]
@@ -380,7 +388,7 @@ label tela_resposta(id, q):
 
 label tela_prender(id):
     $ suspeito = personagens[id]
-    scene bg prender
+    scene bg tela_suspeitos
     "Você está prestes a prender [suspeito['nome']]. Deseja confirmar?"
     menu:
         "Confirmar Prisão":
@@ -395,7 +403,7 @@ label verificar_prisao(id):
         call tela_derrota
 
 label tela_vitoria:
-    scene bg vitoria
+    scene bg bg_tela_introducao
     $ pontuacao -= calcular_penalidade()
 
     "Parabéns! Você solucionou o caso. Pontuação final: [pontuacao]"
@@ -408,7 +416,7 @@ label tela_vitoria:
     return
 
 label tela_derrota:
-    scene bg derrota
+    scene bg bg_tela_introducao
     "Você prendeu a pessoa errada."
     menu:
         "Reiniciar caso":
@@ -417,7 +425,7 @@ label tela_derrota:
             call tela_solucao
 
 label tela_solucao:
-    scene bg solucao
+    scene bg bg_tela_introducao
     "Explicação passo a passo do caso."
 
     menu:
@@ -428,6 +436,11 @@ label tela_solucao:
     return
 
 label tela_resposta_com_fluxo:
+
+    if(temp_id == "julien"):
+        scene bg artista
+    else:
+        scene bg tela_suspeitos
     call tela_resposta(temp_id, temp_q)
     call tela_perguntas_personagem(temp_id, temp_voltar_para, temp_index_tela_anterior, temp_b_ApresentacaoInicial)
     return
