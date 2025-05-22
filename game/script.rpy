@@ -111,8 +111,7 @@ label tela_suspeitos(index):
 
         scene bg apresentacao_suspeito
 
-        show expression s['imagem_idle']
-
+        show expression s['imagem_idle'] at Position(xalign=0.5, yalign=-0.5)
         show screen botao_voltar_suspeito(index)
         "Nome: [s['nome']]"
         "Histórico: [s['descricao']]"
@@ -176,14 +175,14 @@ screen tela_quadro_detalhe(quadro_index=0, b_ApresentacaoInicial=0):
             imagebutton:
                 idle "Ui/avancar_idle.png"
                 hover "Ui/avancar_hover.png"
-                xpos 1600 ypos 200
+                xpos 1700 ypos 200
                 action [Hide("tela_quadro_detalhe"), Call("logic_screen_galeria_quadros")]
                 
         else:
             imagebutton:
                 idle "Ui/avancar_idle.png"
                 hover "Ui/avancar_hover.png"
-                xpos 1600 ypos 200
+                xpos 1700 ypos 200
                 action [Hide("tela_quadro_detalhe"), Show("tela_quadro_detalhe", quadro_index=quadro_index + 1, b_ApresentacaoInicial=b_ApresentacaoInicial)]
             
         imagebutton:
@@ -220,18 +219,21 @@ screen tela_todos_suspeitos():
         xpos 50 ypos 50
         action [Hide("tela_todos_suspeitos"), Call("logic_screen_galeria_quadros")]
 
-    # Botões dos 5 suspeitos
-    hbox:
-        align (0.5, 0.5)
-        spacing 40
+    # Container para centralizar tudo na tela
+    frame:
+        align (0.5, 0.9)
+        background None
 
-        for i in range(5):
-            $ index_suspeito = i + 1
-            $ s = personagens["s{}".format(index_suspeito)]
-            imagebutton:
-                idle s["imagem_idle"]
-                hover s["imagem_hover"]
-                action [Hide("tela_todos_suspeitos"), Show("tela_interrogar_suspeito", id="s{}".format(index_suspeito))]
+        hbox:
+            spacing 5
+            for i in range(5):
+                $ index_suspeito = i + 1
+                $ s = personagens["s{}".format(index_suspeito)]
+                imagebutton:
+                    idle Transform(s["imagem_idle"], zoom=0.4)
+                    hover Transform(s["imagem_hover"], zoom=0.4)
+                    action [Hide("tela_todos_suspeitos"), Show("tela_interrogar_suspeito", id="s{}".format(index_suspeito))]
+
 
 screen tela_interrogar_suspeito(id):
 
@@ -241,7 +243,8 @@ screen tela_interrogar_suspeito(id):
     $ suspeito = personagens[id]
 
     # Mostrar o suspeito no centro da tela
-    add suspeito["imagem_idle"] xpos 0.5 ypos 0.3 xanchor 0.5 yanchor 0.5
+    add suspeito["imagem_idle"] xpos 0.5 ypos -0.5 xanchor 0.5 yanchor -0.5
+
 
     # Botão: Voltar para todos os suspeitos
     imagebutton:
@@ -547,7 +550,7 @@ init python:
 
     },
     "s1": {
-        "nome": "Suspeito 1",
+        "nome": "Beatrice Hargrove",
         "descricao": "Histórico 1",
         "imagem_idle": "Personagens/Suspeito1/suspeito1_idle.png",
         "imagem_hover": "Personagens/Suspeito1/suspeito1_hover.png",
@@ -557,7 +560,7 @@ init python:
         "respostas": ["Resp 1", "Resp 2", "Resp 3", "Resp 4", "Resp 5"]
     },
     "s2": {
-        "nome": "Suspeito 2",
+        "nome": "Thomas Bexley",
         "descricao": "Histórico 2",
         "imagem_idle": "Personagens/Suspeito2/suspeito2_idle.png",
         "imagem_hover": "Personagens/Suspeito2/suspeito2_hover.png",
@@ -567,7 +570,7 @@ init python:
         "respostas": ["Resp 1", "Resp 2", "Resp 3", "Resp 4", "Resp 5"]
     },
     "s3": {
-        "nome": "Suspeito 3",
+        "nome": "Dr. Clarissa Wynn",
         "descricao": "Histórico 3",
         "imagem_idle": "Personagens/Suspeito3/suspeito3_idle.png",
         "imagem_hover": "Personagens/Suspeito3/suspeito3_hover.png",
@@ -577,7 +580,7 @@ init python:
         "respostas": ["Resp 1", "Resp 2", "Resp 3", "Resp 4", "Resp 5"]
     },
     "s4": {
-        "nome": "Suspeito 4",
+        "nome": "Miles Torrence",
         "descricao": "Histórico 4",
         "imagem_idle": "Personagens/Suspeito4/suspeito4_idle.png",
         "imagem_hover": "Personagens/Suspeito4/suspeito4_hover.png",
@@ -587,7 +590,7 @@ init python:
         "respostas": ["Resp 1", "Resp 2", "Resp 3", "Resp 4", "Resp 5"]
     },
     "s5": {
-        "nome": "Suspeito 5",
+        "nome": "Eleanor Finch",
         "descricao": "Histórico 5",
         "imagem_idle": "Personagens/Suspeito5/suspeito5_idle.png",
         "imagem_hover": "Personagens/Suspeito5/suspeito5_hover.png",
