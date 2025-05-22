@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 397: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
-    "Você está prestes a prender [suspeito['nome']]. Deseja confirmar?"
-    ^
+File "game/script.rpy", line 234: keyword argument 'ypos' is incompatible with 'align'.
+    ypos 1200
+        ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu May 22 00:56:19 2025
+Thu May 22 02:01:36 2025
