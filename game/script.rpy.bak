@@ -7,9 +7,7 @@ init:
 
 
 label start:
-
-    play music "audio/bg_ost.mp3" loop
-    call tela_inicial from _call_tela_inicial
+    call tela_inicial
 
 
 label tela_inicial:
@@ -25,7 +23,7 @@ label tela_inicial:
 
     menu:
         "Novo Jogo":
-            call tela_casos from _call_tela_casos
+            call tela_casos
             return
             #call tela_perguntas_personagem("julien", "tela_inicial")
 
@@ -75,7 +73,7 @@ label tela_casos:
     "Escolha um caso para começar."
     menu:
         "Caso 1 - O Vulto na Névoa":
-            call tela_introducao from _call_tela_introducao
+            call tela_introducao
         "Caso 2 (Bloqueado)":
             "Novos casos em breve."
             jump tela_casos
@@ -95,7 +93,7 @@ label tela_introducao:
 
     # window hide
     # pause
-    call tela_apresentacao_caso from _call_tela_apresentacao_caso
+    call tela_apresentacao_caso
 
 label tela_apresentacao_caso:
     scene bg bg_tela_introducao
@@ -103,7 +101,7 @@ label tela_apresentacao_caso:
     "A vítima foi encontrada em seu ateliê. Não há sinais de arrombamento."
     "Julien Armand, pintor vizinho, deixou 8 pinturas com possíveis pistas."
 
-    call tela_suspeitos(0) from _call_tela_suspeitos
+    call tela_suspeitos(0)
 
 label tela_suspeitos(index):
     scene bg tela_suspeitos
@@ -124,7 +122,7 @@ label tela_suspeitos(index):
         "Nome: [s['nome']]"
         "Histórico: [s['descricao']]"
 
-        call tela_suspeitos(index + 1) from _call_tela_suspeitos_1
+        call tela_suspeitos(index + 1)
         # menu:
         #     "Avançar":
         #         call tela_suspeitos(index + 1)
@@ -230,7 +228,7 @@ screen tela_todos_suspeitos():
 
     # Container para centralizar tudo na tela
     frame:
-        align (0.5, 1.4)
+        align (0.5, 1.5)
         background None
 
         hbox:
@@ -239,8 +237,8 @@ screen tela_todos_suspeitos():
                 $ index_suspeito = i + 1
                 $ s = personagens["s{}".format(index_suspeito)]
                 imagebutton:
-                    idle Transform(s["imagem_idle"], xsize=410, ysize=750)
-                    hover Transform(s["imagem_hover"], xsize=410, ysize=750)
+                    idle Transform(s["imagem_idle"], zoom=0.4)
+                    hover Transform(s["imagem_hover"], zoom=0.4)
                     action [Hide("tela_todos_suspeitos"), Show("tela_interrogar_suspeito", id="s{}".format(index_suspeito))]
 
 
@@ -399,15 +397,15 @@ label tela_prender(id):
     "Você está prestes a prender [suspeito['nome']]. Deseja confirmar?"
     menu:
         "Confirmar Prisão":
-            call verificar_prisao(id) from _call_verificar_prisao
+            call verificar_prisao(id)
         "Voltar":
             call screen tela_todos_suspeitos
 
 label verificar_prisao(id):
     if id == culpado:
-        call tela_vitoria from _call_tela_vitoria
+        call tela_vitoria
     else:
-        call tela_derrota from _call_tela_derrota
+        call tela_derrota
 
 label tela_vitoria:
     scene bg bg_tela_introducao
@@ -417,9 +415,9 @@ label tela_vitoria:
 
     menu:
         "Voltar a menu de casos":
-            call tela_casos from _call_tela_casos_1
+            call tela_casos
         "Ver solução":
-            call tela_solucao from _call_tela_solucao
+            call tela_solucao
     return
 
 label tela_derrota:
@@ -427,9 +425,9 @@ label tela_derrota:
     "Você prendeu a pessoa errada."
     menu:
         "Reiniciar caso":
-            call tela_casos from _call_tela_casos_2
+            call tela_casos
         "Ver solução":
-            call tela_solucao from _call_tela_solucao_1
+            call tela_solucao
 
 label tela_solucao:
     scene bg bg_tela_introducao
@@ -437,9 +435,9 @@ label tela_solucao:
 
     menu:
         "Voltar a menu de casos":
-            call tela_casos from _call_tela_casos_3
+            call tela_casos
         "Rever explicação":
-            call tela_solucao from _call_tela_solucao_2
+            call tela_solucao
     return
 
 label tela_resposta_com_fluxo:
@@ -448,8 +446,8 @@ label tela_resposta_com_fluxo:
         scene bg artista
     else:
         scene bg tela_suspeitos
-    call tela_resposta(temp_id, temp_q) from _call_tela_resposta
-    call tela_perguntas_personagem(temp_id, temp_voltar_para, temp_index_tela_anterior, temp_b_ApresentacaoInicial) from _call_tela_perguntas_personagem
+    call tela_resposta(temp_id, temp_q)
+    call tela_perguntas_personagem(temp_id, temp_voltar_para, temp_index_tela_anterior, temp_b_ApresentacaoInicial)
     return
 
 
