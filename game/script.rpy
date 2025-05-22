@@ -380,15 +380,20 @@ label tela_resposta(id, q):
     if id == "julien":
         $ pintura_key = f"pintura{index_tela_anterior + 1}"
         $ resposta = personagens[id].get(f"respostas_{pintura_key}", [""])[q]
+
     else:
         $ resposta = personagens[id]['respostas'][q]
+
+    show expression personagens[id]['imagem_idle'] at Position(xalign=0.5, yalign=-0.5)
 
     "[resposta]"
     return
 
+
 label tela_prender(id):
     $ suspeito = personagens[id]
     scene bg tela_suspeitos
+    show expression personagens[id]['imagem_idle'] at Position(xalign=0.5, yalign=-0.5)
     "Você está prestes a prender [suspeito['nome']]. Deseja confirmar?"
     menu:
         "Confirmar Prisão":
@@ -436,7 +441,7 @@ label tela_solucao:
     return
 
 label tela_resposta_com_fluxo:
-
+    scene bg bg_tela_introducao
     if(temp_id == "julien"):
         scene bg artista
     else:

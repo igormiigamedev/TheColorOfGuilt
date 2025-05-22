@@ -1,88 +1,42 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 10, in script call
-    call tela_inicial
-  File "game/script.rpy", line 26, in script call
-    call tela_casos
-  File "game/script.rpy", line 76, in script call
-    call tela_introducao
-  File "game/script.rpy", line 96, in script call
-    call tela_apresentacao_caso
-  File "game/script.rpy", line 104, in script call
-    call tela_suspeitos(0)
-  File "game/script.rpy", line 125, in script call
-    call tela_suspeitos(index + 1)
-  File "game/script.rpy", line 125, in script call
-    call tela_suspeitos(index + 1)
-  File "game/script.rpy", line 125, in script call
-    call tela_suspeitos(index + 1)
-  [Previous line repeated 2 more times]
-  File "game/script.rpy", line 114, in script call
-    call screen tela_quadro_detalhe(0, 1)
-  File "game/script.rpy", line 125, in script call
-    call tela_suspeitos(index + 1)
-  File "game/script.rpy", line 114, in script call
-    call screen tela_quadro_detalhe(0, 1)
-  File "game/script.rpy", line 373, in script call
-    call screen tela_quadro_detalhe(index_tela_anterior, b_ApresentacaoInicial)
-  File "game/script.rpy", line 373, in script call
-    call screen tela_quadro_detalhe(index_tela_anterior, b_ApresentacaoInicial)
-  File "game/script.rpy", line 373, in script call
-    call screen tela_quadro_detalhe(index_tela_anterior, b_ApresentacaoInicial)
-  [Previous line repeated 1 more time]
-  File "game/script.rpy", line 31, in script call
-    call screen galeria_quadros
-  File "game/script.rpy", line 392, in script
-    add "images/bg/bg_tela_suspeitos.png"
-Exception: Sayer 'add' is not defined.
+  File "renpy/common/00start.rpy", line 219, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 551, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 551, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 565, in _execute_python_hide
+    renpy.load(renpy.session["_reload_slot"])
+Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 10, in script call
-    call tela_inicial
-  File "game/script.rpy", line 26, in script call
-    call tela_casos
-  File "game/script.rpy", line 76, in script call
-    call tela_introducao
-  File "game/script.rpy", line 96, in script call
-    call tela_apresentacao_caso
-  File "game/script.rpy", line 104, in script call
-    call tela_suspeitos(0)
-  File "game/script.rpy", line 125, in script call
-    call tela_suspeitos(index + 1)
-  File "game/script.rpy", line 125, in script call
-    call tela_suspeitos(index + 1)
-  File "game/script.rpy", line 125, in script call
-    call tela_suspeitos(index + 1)
-  [Previous line repeated 2 more times]
-  File "game/script.rpy", line 114, in script call
-    call screen tela_quadro_detalhe(0, 1)
-  File "game/script.rpy", line 125, in script call
-    call tela_suspeitos(index + 1)
-  File "game/script.rpy", line 114, in script call
-    call screen tela_quadro_detalhe(0, 1)
-  File "game/script.rpy", line 373, in script call
-    call screen tela_quadro_detalhe(index_tela_anterior, b_ApresentacaoInicial)
-  File "game/script.rpy", line 373, in script call
-    call screen tela_quadro_detalhe(index_tela_anterior, b_ApresentacaoInicial)
-  File "game/script.rpy", line 373, in script call
-    call screen tela_quadro_detalhe(index_tela_anterior, b_ApresentacaoInicial)
-  [Previous line repeated 1 more time]
-  File "game/script.rpy", line 31, in script call
-    call screen galeria_quadros
-  File "game/script.rpy", line 392, in script
-    add "images/bg/bg_tela_suspeitos.png"
-  File "C:\Users\anton\Downloads\renpy\renpy-8.3.7-sdk\renpy\ast.py", line 2586, in execute
-    Say.execute(self)
-  File "C:\Users\anton\Downloads\renpy\renpy-8.3.7-sdk\renpy\ast.py", line 583, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "C:\Users\anton\Downloads\renpy\renpy-8.3.7-sdk\renpy\ast.py", line 472, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'add' is not defined.
+  File "renpy/common/00start.rpy", line 219, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 551, in script
+    python hide:
+  File "C:\Users\anton\Downloads\renpy\renpy-8.3.7-sdk\renpy\ast.py", line 834, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\anton\Downloads\renpy\renpy-8.3.7-sdk\renpy\python.py", line 1187, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "renpy/common/00keymap.rpy", line 551, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 565, in _execute_python_hide
+    renpy.load(renpy.session["_reload_slot"])
+  File "C:\Users\anton\Downloads\renpy\renpy-8.3.7-sdk\renpy\loadsave.py", line 838, in load
+    log.unfreeze(roots, label="_after_load")
+  File "C:\Users\anton\Downloads\renpy\renpy-8.3.7-sdk\renpy\rollback.py", line 1134, in unfreeze
+    self.rollback(0, force=True, label=label, greedy=greedy, on_load=True)
+  File "C:\Users\anton\Downloads\renpy\renpy-8.3.7-sdk\renpy\rollback.py", line 930, in rollback
+    self.load_failed()
+  File "C:\Users\anton\Downloads\renpy\renpy-8.3.7-sdk\renpy\rollback.py", line 848, in load_failed
+    raise Exception("Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?")
+Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.3.7.25031702
 TheColorOfGuilt 1.0
-Thu May 22 00:20:54 2025
+Thu May 22 00:53:59 2025
