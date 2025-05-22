@@ -154,12 +154,14 @@ screen tela_quadro_detalhe(quadro_index=0, b_ApresentacaoInicial=0):
 
     add "images/bg/bg_tela_artista.png"
 
-    tag quadro_detalhe  # útil para poder substituir ou esconder depois
+    tag quadro_detalhe
 
-    # scene bg pintura
-    # Mostra o quadro ampliado
-    add pinturas[quadro_index]["imagem_idle"] xpos 200 ypos 100 #"Quadros/Idle/quadro_{}_thumb.png".format(quadro_index) xpos 200 ypos 100
     $ p = pinturas[quadro_index]
+
+    # Mostra o quadro ampliado, centralizado
+    add Transform(p["imagem_idle"], zoom=1.5):  # Ajuste o zoom conforme necessário
+        xalign 0.5
+        yalign 0.4
 
 # Texto de instrução
     text "Pintor: Julien Armand - [p['descricao']]":

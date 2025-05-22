@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 234: keyword argument 'ypos' is incompatible with 'align'.
-    ypos 1200
-        ^
+File "game/script.rpy", line 162: imagebutton expects a non-empty block.
+    imagebutton:
+                ^
 
 Ren'Py Version: Ren'Py 8.3.7.25031702
-Thu May 22 02:01:36 2025
+Thu May 22 02:38:13 2025
