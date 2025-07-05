@@ -564,6 +564,16 @@ screen about():
 
             text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
+            text "\nCréditos" size 50
+            text "Projeto desenvolvido na disciplina de Jogos - UFRJ 2025.1"
+            text "Tema: Impressionismo"
+            text "\n Integrantes:"
+            text "  - Antônio Nazar – Design, Roteiro e Programação"
+            text "  - Igor Miranda Barbosa – Design, Roteiro e Programação"
+            text "  - Marcos Antônio – Design, Roteiro e Programação"
+            text "  - Michel Schorr – Design, Roteiro e Programação"
+
+
 
 style about_label is gui_label
 style about_label_text is gui_label_text

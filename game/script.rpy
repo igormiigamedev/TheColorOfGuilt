@@ -92,8 +92,8 @@ label tela_introducao:
 
     "Você é um detetive. Analise as pinturas e depoimentos para encontrar o culpado."
     "Para resolver o mistério, você poderá fazer perguntas aos suspeitos e ao pintor"
-    "- Ao todo você pode fazer 5 perguntas gratuitamente."
-    "- Após essas 5 perguntas, cada pergunta adicional custa 2 pontos da sua pontuação final."
+    "- Ao todo você pode fazer 10 perguntas gratuitamente."
+    "- Após essas 10 perguntas, cada pergunta adicional custa 2 pontos da sua pontuação final."
     "- Investigue com sabedoria: encontrar as contradições e os pequenos detalhes pode ser mais valioso do que acumular falas."
     "- Sua pontuação final será baseada em eficiência, precisão nas acusações e uso estratégico de perguntas."
     # window hide
@@ -104,8 +104,7 @@ label tela_apresentacao_caso:
     scene bg bg_tela_introducao
 
     "Na manhã de terça-feira, o renomado botânico Dr. William Hargrove foi encontrado sem vida dentro de sua estufa. "
-    "A causa da morte: asfixia por falta de oxigênio. Não havia sinais de luta ou arrombamento. "
-    "Curiosamente, a entrada de ar da estufa havia sido trancada por fora, algo que não poderia ter ocorrido acidentalmente."
+    "A causa da morte: Envenenamento por uma substância rara. Não havia sinais de luta ou arrombamento. "
     "Você, detetive Valentin Mireau, foi chamado para investigar o caso. Durante a investigação inicial, um vizinho excêntrico, o pintor Julien Armand, entrega oito quadros que fez da janela de sua varanda. "
     "As pinturas retratam cenas do jardim e da estufa nos dias e noites que antecederam a morte do botânico."
     "Com base em interrogatórios, observações e nas pistas visuais das obras, você deverá revelar a verdade por trás deste assassinato silencioso — e artístico."
@@ -346,7 +345,7 @@ screen screen_perguntas_personagem(id, voltar_para, index_tela_anterior=0, b_Apr
 
         text "Perguntas para [personagem['nome']]" size 40 color "#FFFFFF" xalign 0.5
 
-        if perguntas_feitas >= 5:
+        if perguntas_feitas >= 10:
             text "Atenção: essa pergunta custará pontos." color "#FF4444" xalign 0.5 size 25
 
         for i in range(total_perguntas):
@@ -443,10 +442,16 @@ label tela_derrota:
 label tela_solucao:
     scene bg bg_tela_introducao
     "Explicação passo a passo do caso:"
-    "Assassina: Dr. Clarissa Wynn"
-    "Motivação: Vingança científica. Ao ser convidada pela sobrinha do botânico para visitar a estufa, Clarissa descobre evidências claras de que William Hargrove ainda utilizava suas pesquisas indevidamente. A traição reacende a mágoa e a fúria da rival."
-    "Método: Sabotagem técnica do sistema de ventilação. Com profundo conhecimento em botânica e estruturas de estufas, Clarissa aproveita a visita, supostamente para ajudar a resolver um problema de ruído, e altera discretamente o sistema de segurança, trancando a entrada de ar por fora."
-    "Naquela mesma noite, sem saber da sabotagem, William entra na estufa para trabalhar e morre asfixiado, sem deixar sinais de violência."
+    "Assassina: Beatrice Hargrove, a sobrinha"
+    "Motivação: Beatrice estava endividada e frustrada com a postura do tio, que mantinha uma valiosa coleção de plantas raras apenas como hobby, recusando-se a patenteá-las ou vendê-las. Como herdeira parcial, ela via uma fortuna inexplorada diante de si."
+    "Ao eliminá-lo, ela teria acesso ao acervo completo e, com as suspeitas recaindo sobre os demais envolvidos — cada um com um motivo visível — seu plano parecia perfeito. "
+    "A assassina criou um cenário onde todos os outros pareciam culpados. Porém, em meio às intenções cruzadas, a verdadeira culpada era a única que silenciosamente movia cada peça do tabuleiro."
+    "Método: Obteve a planta venenosa azul em duplicidade. Uma foi vendida ao antigo assistente (como distração), outra foi guardada em segredo."
+    "Manipulou a narrativa dos demais suspeitos:"
+    "   - Pediu ao jardineiro que entregasse a planta ao ex-assistente, o que gerou sua demissão. Além de colocar nas mãos do assistente a arma do futuro crime"
+    "   - Chamou a Dra. Clarissa, rival do tio, à estufa dias antes, sabendo que ela encontraria sinais de plágio."
+    "   - Ganhou a simpatia da vizinha, tornando-se uma aliada indireta."
+    "Na noite do crime, colocou discretamente uma pequena dose do extrato da planta azul na xícara de chá habitual de William, que costumava tomar sozinho na estufa ao final do dia."
 
     menu:
         "Voltar a menu de casos":
@@ -501,11 +506,11 @@ init python:
 
     perguntas_feitas = 0
     pontuacao = 100
-    culpado = "s3"  # exemplo
+    culpado = "s1"  # exemplo
 
     def calcular_penalidade():
         # penalidade_tempo = max(0, (tempo_jogo - 10) // 2)
-        penalidade_perguntas = 2 * max(0, perguntas_feitas - 5)
+        penalidade_perguntas = 2 * max(0, perguntas_feitas - 10)
         return penalidade_perguntas
 
     # suspeitos = [
@@ -586,7 +591,7 @@ init python:
     ],
     "respostas_pintura4": [
         "Foi uma manhã de vozes elevadas e gestos pontiagudos. A lavanda da roupa dela parecia engolida pelo cinza da irritação.",
-        "Barulho. Ela apontava para a estufa, fazia gestos com as mãos nos ouvidos.",
+        "Luz. Ela apontava para a estufa, fazia gestos com as mãos nos olhos.",
         "Não. Observava de longe, sem intervir. Como quem espera o fim de uma peça.",
         "Porque a raiva apaga a beleza. E ali, a manhã parecia vestida de bruma, como se até a primavera recuasse.",
         "As flores recém-abertas não se intrometiam. Mas o vento levava fragmentos do que foi dito."
@@ -608,14 +613,14 @@ init python:
     ],
 
     "perguntas_pintura6": [
-        "Por que pintar duas figuras dentro da estufa?",
+        "O que motivou essa pintura?",
         "O que pareciam estar fazendo?",
         "Você notou algo estranho nessa cena?",
         "Por que as cores são mais vibrantes nesta pintura?",
         "Qual sensação teve ao concluir essa obra?"
     ],
     "respostas_pintura6": [
-        "Porque o vidro não separava o mundo — só o distorcia. Lá dentro, duas presenças divergentes, como água e óleo.",
+        "Porque o vidro não separava o mundo — só o distorcia. Lá dentro, um azul gritando pelo futuro e sussurando o passado.",
         "A doutora gesticulava com força. A sobrinha tentava explicar. Algo havia sido descoberto.",
         "A cientista saiu sozinha pouco depois. O rosto... sombrio, de raiva. A sobrinha não a acompanhou.",
         "Porque a tensão elétrica pairava. Era o tipo de momento onde tudo poderia florescer... ou murchar de vez.",
@@ -666,10 +671,10 @@ init python:
             "Foi você?"
         ],
         "respostas": [
-            "Sim, adoro viajar, mesmo que meus pais estejam ficando impacientes com isso.",
-            "Ele sempre foi um doce, me deixava visitar e aprender sobre plantas com ele.",
+            "Sim, sonhava em sair daqui. Uma nova vida em outro continente... Meu tio sempre foi uma pessoa que fez de tudo por mim. Mesmo com seu falecimento, conseguiu arrumar uma maneira de me ajudar deixando-me a herança",
+            "Ele me tratava como filha, era uma pessoa com pouca visão de futuro, nunca enxergou o potencial que tinha nas mãos com suas plantas e acabou falecendo sem usufruir desse privilégio.",
             "Recebi um envelope com dinheiro em troca de uma muda de planta azul rara que cultivei com ajuda do jardineiro.",
-            "Fomos consertar um problema na ventilação da estufa pois estava com um barulho muito alto, e deixei a Dra. assumir quando vi que não sabia lidar com isso.",
+            "Pedi a ajuda dela para entender porque meu tio precisava trabalhar na estufa durante a noite. Ela me explicou que era por causa do tipo da planta, mas saiu muito chateada ao ver algumas pesquisas dela que meu tio estava usando",
             "Por que eu mataria meu tio?! 😢"
         ]
     },
@@ -681,15 +686,15 @@ init python:
         "perguntas": [
             "É verdade que o Dr. Hargrove te demitiu pouco antes de morrer?",
             "O que era aquela planta que você entregou ao Assistente?",
-            "Era difícil trabalhar para o Dr. Hargrove?",
-            "Você cuidava da manutenção da estufa?",
+            "A planta que entregou ao Assistente era a última do tipo azul na casa?",
+            "Você cuidava das plantas que estavam dentro da estufa também?",
             "Foi você?"
         ],
         "respostas": [
             "Sim, ele achou que eu estava vendendo as plantas por conta própria, mas foi a pedido da Beatrice.",
-            "Uma planta azul rara que a Beatrice começou e eu cuidei até o Assistente buscá-la.",
-            "Ele era exigente, mas já trabalhei para piores; agora tenho um emprego melhor.",
-            "Não, só das plantas; vi a Dra. mexendo sozinha na estufa irritada um dia.",
+            "Uma planta venenosa azul rara que a Beatrice começou a cultivar no inverno e eu cuidei até o Assistente buscá-la na primavera. Acho que era uma das preferidas de Dr. Hargrove e de Beatrice, cuidavam dela como um filho",
+            "Era a última na estufa durante a primavera. Mas no período de primavera ela sobrevive fora da estufa também, acho difícil Dr. Hargrove e Beatrice permitirem que a última planta azul fosse vendida",
+            "Muito raramente, na estufa tinham as plantas raras do Doutor. Essas ele cuidava sozinho.",
             "Plantaram isso contra mim, com certeza!"
         ]
     },
@@ -707,9 +712,9 @@ init python:
         ],
         "respostas": [
             "Fomos colegas de doutorado, nada além disso.",
-            "Sim, ele publicou um artigo baseado na minha apresentação, mas se desculpou quando confrontei.",
-            "Fui ajudar a consertar o barulho da estufa que William ignorou, típico dele.",
-            "Sim, voltei para continuar a manutenção, já que Beatrice insistiu.",
+            "Sim, ele publicou um artigo baseado na minha apresentação anos atrás, mas se desculpou quando confrontei e disse que não faria uso delas de novo.",
+            "Ela me pediu para explicar o motivo de o trabalho com algumas plantas precisar ser noturno. Algumas plantas raras exigem isso, algo que eu explorei em minhas pesquisas que aparentemente Dr. Hargrove ainda usava",
+            "Não, queria me afastar ao máximo de Dr. Hargrove. Estar perto dele é um perigo para as minhas novas pesquisas.",
             "Você não é um detetive muito bom, não é?"
         ]
     },
@@ -726,30 +731,30 @@ init python:
             "Foi você?"
         ],
         "respostas": [
-            "Sim, mas saí depois de uma briga por ele não deixar eu pesquisar uma planta rara.",
+            "Sim. Até ele me cortar o acesso à pesquisa. Aquilo arruinou meu projeto com as plantas raras.",
             "Ele era um chefe bem chato, e não deixava eu colocar as mãos nas pesquisas direito.",
-            "Dinheiro, em troca de uma amostra igual à do tio dela que ela prometeu conseguir.",
-            "Uma espécie rara que só cresce em uma ilha no sul da África….",
+            "Dinheiro, em troca de uma amostra igual à do tio dela que ela prometeu conseguir. Essa planta me perimitiu voltar as pesquisas do meu projeto, então sou muito grato a Beatrice",
+            "Uma variedade desconhecida. Extremamente rara... e, descobri depois, venenosa.",
             "Se eu fosse o culpado, você acha que eu diria sim?"
         ]
     },
     "s5": {
         "nome": "Eleanor Finch",
-        "descricao": "Vizinha da vítima, professora aposentada de música. Se queixava constantemente dos sons e vapores noturnos da estufa.",
+        "descricao": "Vizinha da vítima, professora aposentada de música. Se queixava constantemente das luzes noturnas da estufa.",
         "imagem_idle": "Personagens/Suspeito5/suspeito5_idle.png",
         "imagem_hover": "Personagens/Suspeito5/suspeito5_hover.png",
         "perguntas": [
-            "Então a estufa estava fazendo muito barulho?",
+            "A luz da estufa durante a noite te estressava?",
             "Além dos barulhos, ele era um bom vizinho?",
             "A Sobrinha da vítima é confiável?",
             "Algum outro residente ou visitante poderia ter problemas com o Dr Hargrove?",
             "Foi você?"
         ],
         "respostas": [
-            "Sim, me tirava o sono, e só parou quando a sobrinha veio resolver.",
+            "Sim, me tirava o sono.",
             "Discreto, mas egocêntrico e já ouvi histórias de desentendimentos e plágio.",
             "Sim, sempre prestativa, mas um pouco mimada e sem rumo na vida.",
-            "O assistente e o jardineiro, que ele tratava mal e demitia por pouco.",
+            "A Dra. Wynn. E o rapaz que vinha antes — o assistente. Todos pareciam carregados.",
             "Acusar assim sem prova? Espere eu chamar meus advogados!"
         ]
     }
